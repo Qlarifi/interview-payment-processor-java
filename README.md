@@ -22,9 +22,8 @@ mvn spring-boot:run
 The app will:
 
 1. Start an in-memory H2 database and create the `payments` table.
-2. Seed the queue with one payment message (payment id `42`).
-3. Start four worker threads that poll the queue and process messages.
-4. Expose REST API at `http://localhost:8080`.
+2. Start four worker threads that poll the queue and process messages.
+3. Expose REST API at `http://localhost:8080`.
 
 ## API
 
