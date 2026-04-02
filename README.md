@@ -60,8 +60,17 @@ Use the H2 console to query `SELECT * FROM payments;` and see payment rows.
 
 ## Configuration
 
-- `app.queue.visibility-timeout-seconds` – visibility timeout for received messages (default: 30).
-- `app.worker.thread-count` – number of worker threads (default: 4).
-- `app.worker.poll-interval-ms` – delay between polls when queue is empty (default: 500).
-
 Config is in `src/main/resources/application.yml`.
+
+| Property | Description | Default |
+|---|---|---|
+| `server.port` | HTTP listen port | `8080` |
+| `app.queue.visibility-timeout-seconds` | Visibility timeout for received messages | `30` |
+| `app.worker.thread-count` | Number of worker threads | `4` |
+| `app.worker.poll-interval-ms` | Delay between polls when queue is empty | `500` |
+
+To override the port without editing the file:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=9090
+```
